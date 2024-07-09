@@ -106,7 +106,7 @@ ${license ?? ''}
 ${InnoSetupLanguagesBuilder(languages)}
 
 [Tasks]
-${desktopIcon ? const InnoSetupDesktopIconBuilder(defaultDesktopIcon) : ''}
+${desktopIcon ? InnoSetupDesktopIconBuilder(defaultDesktopIcon) : ''}
 
 $files
 
