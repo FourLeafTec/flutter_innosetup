@@ -51,6 +51,7 @@ class InnoSetup {
     required this.app,
     required this.files,
     this.desktopIcon = false,
+    this.defaultDesktopIcon = false,
     this.runAfterInstall = true,
   });
 
@@ -84,6 +85,9 @@ class InnoSetup {
   /// Asking create desktop icon or not
   final bool desktopIcon;
 
+  /// Default create desktop icon
+  final bool defaultDesktopIcon;
+
   /// Run app after installing.
   final bool runAfterInstall;
 
@@ -102,7 +106,7 @@ ${license ?? ''}
 ${InnoSetupLanguagesBuilder(languages)}
 
 [Tasks]
-${desktopIcon ? const InnoSetupDesktopIconBuilder() : ''}
+${desktopIcon ? const InnoSetupDesktopIconBuilder(defaultDesktopIcon) : ''}
 
 $files
 
